@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.frapaego.spring.h2.controller.PriceController;
-import es.frapaego.spring.h2.exception.GenericHttpRuntimeException;
 import es.frapaego.spring.h2.model.Price;
 import es.frapaego.spring.h2.service.PriceService;
 
