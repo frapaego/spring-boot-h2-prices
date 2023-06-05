@@ -19,7 +19,7 @@ import es.frapaego.spring.h2.model.Price;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class PriceControllerTest2 {
+public class PriceControllerTest {
 	@Autowired
 	private PriceControllerImpl priceController;
 

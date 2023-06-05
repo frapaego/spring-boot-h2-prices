@@ -11,6 +11,11 @@ import es.frapaego.spring.h2.model.Price;
 import es.frapaego.spring.h2.repository.PriceRepository;
 import es.frapaego.spring.h2.service.PriceService;
 
+/**
+ * PriceServiceImpl
+ * @author frapaego@gmail.com
+ *
+ */
 @Service
 public class PriceServiceImpl implements PriceService {
 
@@ -20,6 +25,9 @@ public class PriceServiceImpl implements PriceService {
 	@Autowired
 	private GenericConversionService genericConversionService;
 
+	/**
+	 * @see es.frapaego.spring.h2.service.PriceService#findByStartDateAndProductIdAndBrandId(java.time.LocalDateTime, java.lang.Integer, java.lang.Integer)
+	 */
 	public Price findByStartDateAndProductIdAndBrandId(final LocalDateTime startDate, final Integer productId,
 			final Integer brandId) {
 		return Optional.ofNullable(

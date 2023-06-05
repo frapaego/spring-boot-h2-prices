@@ -18,6 +18,11 @@ import es.frapaego.spring.h2.controller.PriceController;
 import es.frapaego.spring.h2.model.Price;
 import es.frapaego.spring.h2.service.PriceService;
 
+/**
+ * PriceControllerImpl
+ * @author frapaego@gmail.com
+ *
+ */
 @CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/api")
@@ -26,6 +31,9 @@ public class PriceControllerImpl implements PriceController {
 	@Autowired
 	PriceService priceService;
 
+	/**
+	 * @see es.frapaego.spring.h2.controller.PriceController#obtenerPrecio(java.lang.Integer, java.lang.Integer, java.time.LocalDateTime)
+	 */
 	@GetMapping("/obtenerPrecio/{brandId}/{productId}")
 	public ResponseEntity<Price> obtenerPrecio(
 			@PathVariable("brandId") final Integer brandId,

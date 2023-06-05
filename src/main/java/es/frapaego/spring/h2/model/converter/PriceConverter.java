@@ -8,9 +8,17 @@ import org.springframework.stereotype.Component;
 import es.frapaego.spring.h2.model.Price;
 import es.frapaego.spring.h2.model.dao.PriceDAO;
 
+/**
+ * PriceConverter
+ * @author frapaego@gmail.com
+ *
+ */
 @Component
 public class PriceConverter implements Converter<PriceDAO, Price> {
 
+	/**
+	 * @see org.springframework.core.convert.converter.Converter#convert(java.lang.Object)
+	 */
 	@Override
 	public Price convert(final PriceDAO source) {
 
