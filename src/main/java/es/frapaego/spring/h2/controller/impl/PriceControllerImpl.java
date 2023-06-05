@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.frapaego.spring.h2.controller.PriceController;
+import es.frapaego.spring.h2.exception.GenericHttpRuntimeException;
 import es.frapaego.spring.h2.model.Price;
 import es.frapaego.spring.h2.service.PriceService;
 
@@ -34,7 +36,7 @@ public class PriceControllerImpl implements PriceController {
 	/**
 	 * @see es.frapaego.spring.h2.controller.PriceController#obtenerPrecio(java.lang.Integer, java.lang.Integer, java.time.LocalDateTime)
 	 */
-	@GetMapping("/obtenerPrecio/{brandId}/{productId}")
+	@GetMapping(value = "/obtenerPrecio/{brandId}/{productId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Price> obtenerPrecio(
 			@PathVariable("brandId") final Integer brandId,
 			@PathVariable("productId") final Integer productId,
