@@ -147,7 +147,7 @@ public class PriceDTO {
 
 	@Override
 	public String toString() {
-		return "Price [priceList=" + this.priceList + ", brandId=" + this.brandId + ", startDate=" + this.startDate
+		return "PriceDTO [priceList=" + this.priceList + ", brandId=" + this.brandId + ", startDate=" + this.startDate
 				+ ", endDate=" + this.endDate + ", productId=" + this.productId + ", priority=" + this.priority
 				+ ", price=" + this.price + ", curr=" + this.curr + "]";
 	}

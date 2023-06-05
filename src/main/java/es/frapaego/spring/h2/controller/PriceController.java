@@ -1,7 +1,6 @@
 package es.frapaego.spring.h2.controller;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +41,7 @@ public class PriceController {
 					@Content(schema = @Schema()) }),
 			@ApiResponse(responseCode = "500", content = { @Content(schema = @Schema()) }) })
 	@GetMapping("/obtenerPrecio/{brandId}/{productId}")
-	public ResponseEntity<List<Price>> obtenerPrecio(
+	public ResponseEntity<Price> obtenerPrecio(
 			@PathVariable("brandId") final Integer brandId,
 			@PathVariable("productId") final Integer productId,
 			@RequestParam("startDate") @Parameter(schema = @Schema(format = "dd-MM-yyyy HH:mm:ss")) 

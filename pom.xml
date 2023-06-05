@@ -51,6 +51,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>3.1.0</version>
+		    <scope>provided</scope>
+		</dependency>
         
         <dependency>
 			<groupId>org.springdoc</groupId>
@@ -63,6 +70,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.google.code.bean-matchers</groupId>
+		    <artifactId>bean-matchers</artifactId>
+		    <version>0.14</version>
+		    <scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -70,7 +90,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>			
+			</plugin>		
 		</plugins>
 		<resources>
             <resource>
