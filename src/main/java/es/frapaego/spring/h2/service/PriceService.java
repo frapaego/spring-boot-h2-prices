@@ -6,7 +6,7 @@ import es.frapaego.spring.h2.model.Price;
 
 public interface PriceService {
 
-	Price findByStartDateProductIdBrandId(final LocalDateTime startDate, final Integer productId,
+	Price findByStartDateAndProductIdAndBrandId(final LocalDateTime startDate, final Integer productId,
 			final Integer brandId);
 
 }

@@ -20,7 +20,7 @@ public class PriceServiceImpl implements PriceService {
 	@Autowired
 	private GenericConversionService genericConversionService;
 
-	public Price findByStartDateProductIdBrandId(final LocalDateTime startDate, final Integer productId,
+	public Price findByStartDateAndProductIdAndBrandId(final LocalDateTime startDate, final Integer productId,
 			final Integer brandId) {
 		return Optional.ofNullable(
 					this.repository.findByStartDateAndProductIdAndBrandId(startDate, productId, brandId))

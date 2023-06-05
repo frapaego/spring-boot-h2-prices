@@ -1,4 +1,4 @@
-package es.frapaego.spring.h2.model.dto;
+package es.frapaego.spring.h2.model.dao;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "price")
-public class PriceDTO {
+public class PriceDAO {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,11 +39,11 @@ public class PriceDTO {
 	@Column(name = "curr")
 	private String curr;
 
-	public PriceDTO() {
+	public PriceDAO() {
 		super();
 	}
 
-	public PriceDTO(final Integer priceList, final Integer brandId, final LocalDateTime startDate,
+	public PriceDAO(final Integer priceList, final Integer brandId, final LocalDateTime startDate,
 			final LocalDateTime endDate, final Integer productId, final Integer priority, final Double price,
 			final String curr) {
 		super();
@@ -138,7 +138,7 @@ public class PriceDTO {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		final PriceDTO other = (PriceDTO) obj;
+		final PriceDAO other = (PriceDAO) obj;
 		return Objects.equals(this.brandId, other.brandId) && Objects.equals(this.curr, other.curr)
 				&& Objects.equals(this.endDate, other.endDate) && Objects.equals(this.price, other.price)
 				&& Objects.equals(this.priceList, other.priceList) && Objects.equals(this.priority, other.priority)
@@ -147,7 +147,7 @@ public class PriceDTO {
 
 	@Override
 	public String toString() {
-		return "PriceDTO [priceList=" + this.priceList + ", brandId=" + this.brandId + ", startDate=" + this.startDate
+		return "PriceDAO [priceList=" + this.priceList + ", brandId=" + this.brandId + ", startDate=" + this.startDate
 				+ ", endDate=" + this.endDate + ", productId=" + this.productId + ", priority=" + this.priority
 				+ ", price=" + this.price + ", curr=" + this.curr + "]";
 	}

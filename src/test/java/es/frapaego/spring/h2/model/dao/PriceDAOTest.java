@@ -1,4 +1,4 @@
-package es.frapaego.spring.h2.model.dto;
+package es.frapaego.spring.h2.model.dao;
 
 import static com.google.code.beanmatchers.BeanMatchers.hasValidBeanConstructor;
 import static com.google.code.beanmatchers.BeanMatchers.hasValidBeanEqualsExcluding;
@@ -8,33 +8,38 @@ import static com.google.code.beanmatchers.BeanMatchers.hasValidGettersAndSetter
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-public class PriceDTOTest {
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class PriceDAOTest {
 
 	private static final String[] IGNORE_PROPERTIES = { "startDate", "endDate" };
 	
 	@Test
 	public void shouldHaveANoArgsConstructor() {
-		assertThat(PriceDTO.class, hasValidBeanConstructor());
+		assertThat(PriceDAO.class, hasValidBeanConstructor());
 	}
 
 	@Test
 	public void gettersAndSettersShouldWorkForEachProperty() {
-		assertThat(PriceDTO.class, hasValidGettersAndSettersExcluding(IGNORE_PROPERTIES));
+		assertThat(PriceDAO.class, hasValidGettersAndSettersExcluding(IGNORE_PROPERTIES));
 	}
 
 	@Test
 	public void allPropertiesShouldInfluenceHashCode() {
-		assertThat(PriceDTO.class, hasValidBeanHashCodeExcluding(IGNORE_PROPERTIES));
+		assertThat(PriceDAO.class, hasValidBeanHashCodeExcluding(IGNORE_PROPERTIES));
 	}
 
 	@Test
 	public void allPropertiesShouldBeComparedDuringEquals() {
-		assertThat(PriceDTO.class, hasValidBeanEqualsExcluding(IGNORE_PROPERTIES));
+		assertThat(PriceDAO.class, hasValidBeanEqualsExcluding(IGNORE_PROPERTIES));
 	}
 
 	@Test
 	public void allPropertiesShouldBeRepresentedInToStringOutput() {
-		assertThat(PriceDTO.class, hasValidBeanToStringExcluding(IGNORE_PROPERTIES));
+		assertThat(PriceDAO.class, hasValidBeanToStringExcluding(IGNORE_PROPERTIES));
 	}
 }

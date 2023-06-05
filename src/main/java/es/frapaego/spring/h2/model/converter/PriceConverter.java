@@ -6,13 +6,13 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import es.frapaego.spring.h2.model.Price;
-import es.frapaego.spring.h2.model.dto.PriceDTO;
+import es.frapaego.spring.h2.model.dao.PriceDAO;
 
 @Component
-public class PriceDTOConverter implements Converter<PriceDTO, Price> {
+public class PriceConverter implements Converter<PriceDAO, Price> {
 
 	@Override
-	public Price convert(final PriceDTO source) {
+	public Price convert(final PriceDAO source) {
 
 		return Optional.ofNullable(source)
 				.map(s -> Price.builder()
