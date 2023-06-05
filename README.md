@@ -1,6 +1,6 @@
 # spring-boot-h2-prices
 
-![Diagram](diagram.drawio.svg)
+[Diagram](diagram.drawio.svg)
 
 ## Overview
 El siguiente repositorio contiene la prueba de Francisco José Páez Gordillo para BCNC Group.
