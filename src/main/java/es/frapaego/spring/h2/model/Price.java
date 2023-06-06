@@ -3,6 +3,7 @@ package es.frapaego.spring.h2.model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import io.swagger.v3.oas.annotations.Parameter;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -31,12 +32,14 @@ public class Price implements Serializable {
 	/**
 	 * priceList
 	 */
+	@Parameter(description = "Identificador de la tarifa de precios aplicable", example = "1")
 	private Integer priceList;
 
 	/**
 	 * brandId
 	 */
-	private Integer brandId;
+	@Parameter(description = "Identificador de la tarifa de precios aplicable", example = "1")
+	private Brand brand;
 
 	/**
 	 * startDate

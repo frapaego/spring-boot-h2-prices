@@ -2,10 +2,13 @@ package es.frapaego.spring.h2.model.converter;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
+import es.frapaego.spring.h2.model.Brand;
 import es.frapaego.spring.h2.model.Price;
+import es.frapaego.spring.h2.model.dao.BrandDAO;
 import es.frapaego.spring.h2.model.dao.PriceDAO;
 
 /**
@@ -16,6 +19,9 @@ import es.frapaego.spring.h2.model.dao.PriceDAO;
 @Component
 public class PriceConverter implements Converter<PriceDAO, Price> {
 
+	@Autowired
+	private Converter<BrandDAO, Brand> brandConverter;
+	
 	/**
 	 * @see org.springframework.core.convert.converter.Converter#convert(java.lang.Object)
 	 */
@@ -24,7 +30,7 @@ public class PriceConverter implements Converter<PriceDAO, Price> {
 
 		return Optional.ofNullable(source)
 				.map(s -> Price.builder()
-						.brandId(s.getBrandId())
+						.brand(Optional.ofNullable(s.getBrand()).map(this.brandConverter::convert).orElse(null))
 						.startDate(s.getStartDate())
 						.endDate(s.getEndDate())
 						.priceList(s.getPriceList())

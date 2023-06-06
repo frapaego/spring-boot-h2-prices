@@ -8,6 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,7 +37,8 @@ public class PriceControllerImpl implements PriceController {
 	 * @see es.frapaego.spring.h2.controller.PriceController#obtenerPrecio(java.lang.Integer, java.lang.Integer, java.time.LocalDateTime)
 	 */
 	@GetMapping(value = "/obtenerPrecio/{brandId}/{productId}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Price> obtenerPrecio(
+	@Transactional(readOnly = true)
+    public ResponseEntity<Price> obtenerPrecio(
 			@PathVariable("brandId") final Integer brandId,
 			@PathVariable("productId") final Integer productId,
 			@RequestParam("startDate") @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm:ss") final LocalDateTime startDate) {

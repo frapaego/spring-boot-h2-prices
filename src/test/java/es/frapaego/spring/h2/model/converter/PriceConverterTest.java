@@ -13,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import es.frapaego.spring.h2.model.Price;
+import es.frapaego.spring.h2.model.dao.BrandDAO;
 import es.frapaego.spring.h2.model.dao.PriceDAO;
 
 @RunWith(SpringRunner.class)
@@ -21,6 +22,8 @@ public class PriceConverterTest {
     
     @Autowired
     private PriceConverter priceConverter;
+    @Autowired
+    private BrandConverter brandConverter;
     
     @Test
     public void test_null() {
@@ -39,13 +42,14 @@ public class PriceConverterTest {
     	final Integer brandId = 1;
     	final Integer productId = 35455;
     	
-    	final PriceDAO dao = new PriceDAO();
-    	dao.setStartDate(startDate);
-    	dao.setBrandId(brandId);
-    	dao.setProductId(productId);
+    	final BrandDAO brandDAO = new BrandDAO(brandId, "ZARA");
+    	final PriceDAO priceDAO = new PriceDAO();
+    	priceDAO.setStartDate(startDate);
+    	priceDAO.setBrand(brandDAO);
+    	priceDAO.setProductId(productId);
     	
-    	final Price expectedResult = Price.builder().startDate(startDate).brandId(brandId).productId(productId).build();
-        final Price result = this.priceConverter.convert(dao);
+    	final Price expectedResult = Price.builder().startDate(startDate).brand(this.brandConverter.convert(brandDAO)).productId(productId).build();
+        final Price result = this.priceConverter.convert(priceDAO);
 
         assertThat(result, is(expectedResult));
         

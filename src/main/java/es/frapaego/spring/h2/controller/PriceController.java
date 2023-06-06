@@ -36,6 +36,8 @@ public interface PriceController {
 			@ApiResponse(responseCode = "404", description = "There are no Prices", content = {
 					@Content(schema = @Schema()) }),
 			@ApiResponse(responseCode = "500", content = { @Content(schema = @Schema()) }) })
-	ResponseEntity<Price> obtenerPrecio(final Integer brandId, final Integer productId,
-			@Parameter(schema = @Schema(format = "dd-MM-yyyy HH:mm:ss")) final LocalDateTime startDate);
+	ResponseEntity<Price> obtenerPrecio(
+			@Parameter(description = "Identificador de la marca", example = "1") final Integer brandId, 
+			@Parameter(description = "Identificador del producto", example = "35455") final Integer productId,
+			@Parameter(description = "Día y hora de consulta", example = "16-04-2020 10:00:00", schema = @Schema(format = "dd-MM-yyyy HH:mm:ss")) final LocalDateTime startDate);
 }
