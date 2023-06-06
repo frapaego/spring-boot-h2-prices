@@ -39,5 +39,5 @@ public interface PriceController {
 	ResponseEntity<Price> obtenerPrecio(
 			@Parameter(description = "Identificador de la marca", example = "1") final Integer brandId, 
 			@Parameter(description = "Identificador del producto", example = "35455") final Integer productId,
-			@Parameter(description = "Día y hora de consulta", example = "16-04-2020 10:00:00", schema = @Schema(format = "dd-MM-yyyy HH:mm:ss")) final LocalDateTime startDate);
+			@Parameter(description = "Día y hora de consulta", example = "14-06-2020 10:00:00", schema = @Schema(format = "dd-MM-yyyy HH:mm:ss")) final LocalDateTime startDate);
 }
