@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class PriceDAOTest {
 
-	private static final String[] IGNORE_PROPERTIES = { "startDate", "endDate" };
+	private static final String[] IGNORE_PROPERTIES = { "startDate", "endDate", "brand" };
 	
 	@Test
 	public void shouldHaveANoArgsConstructor() {

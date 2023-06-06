@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import es.frapaego.spring.h2.model.dao.BrandDAO;
 import es.frapaego.spring.h2.model.dao.PriceDAO;
 
 @RunWith(SpringRunner.class)
@@ -26,7 +27,10 @@ public class PriceRepositoryTest {
     	
     	final LocalDateTime date = LocalDateTime.of(2020, 6, 14, 10, 0, 0);
     	
-        final PriceDAO result = this.priceRepository.findByStartDateAndProductIdAndBrandId(date, 35455, 1);
+    	final BrandDAO brandDAO = new BrandDAO();
+    	brandDAO.setBrandId(1);
+    	
+        final PriceDAO result = this.priceRepository.findByStartDateAndProductIdAndBrandId(date, 35455, brandDAO);
 
         assertThat(result, notNullValue());
         assertThat(result.getStartDate().isBefore(date), is(true));
@@ -39,7 +43,10 @@ public class PriceRepositoryTest {
     	
     	final LocalDateTime date = LocalDateTime.of(2020, 6, 14, 16, 0, 0);
     	
-        final PriceDAO result = this.priceRepository.findByStartDateAndProductIdAndBrandId(date, 35455, 1);
+    	final BrandDAO brandDAO = new BrandDAO();
+    	brandDAO.setBrandId(1);
+    	
+        final PriceDAO result = this.priceRepository.findByStartDateAndProductIdAndBrandId(date, 35455, brandDAO);
 
         assertThat(result, notNullValue());
         assertThat(result.getStartDate().isBefore(date), is(true));
@@ -51,7 +58,10 @@ public class PriceRepositoryTest {
     	
     	final LocalDateTime date = LocalDateTime.of(2020, 6, 14, 21, 0, 0);
     	
-        final PriceDAO result = this.priceRepository.findByStartDateAndProductIdAndBrandId(date, 35455, 1);
+    	final BrandDAO brandDAO = new BrandDAO();
+    	brandDAO.setBrandId(1);
+    	
+        final PriceDAO result = this.priceRepository.findByStartDateAndProductIdAndBrandId(date, 35455, brandDAO);
         
         assertThat(result, notNullValue());
         assertThat(result.getStartDate().isBefore(date), is(true));
@@ -63,7 +73,10 @@ public class PriceRepositoryTest {
     	
     	final LocalDateTime date = LocalDateTime.of(2020, 6, 15, 10, 0, 0);
     	
-        final PriceDAO result = this.priceRepository.findByStartDateAndProductIdAndBrandId(date, 35455, 1);
+    	final BrandDAO brandDAO = new BrandDAO();
+    	brandDAO.setBrandId(1);
+    	
+        final PriceDAO result = this.priceRepository.findByStartDateAndProductIdAndBrandId(date, 35455, brandDAO);
 
         assertThat(result, notNullValue());
         assertThat(result.getStartDate().isBefore(date), is(true));
@@ -75,7 +88,10 @@ public class PriceRepositoryTest {
     	
     	final LocalDateTime date = LocalDateTime.of(2020, 6, 16, 21, 0, 0);
     	
-        final PriceDAO result = this.priceRepository.findByStartDateAndProductIdAndBrandId(date, 35455, 1);
+    	final BrandDAO brandDAO = new BrandDAO();
+    	brandDAO.setBrandId(1);
+    	
+        final PriceDAO result = this.priceRepository.findByStartDateAndProductIdAndBrandId(date, 35455, brandDAO);
 
         assertThat(result, notNullValue());
         assertThat(result.getStartDate().isBefore(date), is(true));
