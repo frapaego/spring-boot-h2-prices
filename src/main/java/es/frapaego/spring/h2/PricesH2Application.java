@@ -11,6 +11,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class PricesH2Application {
 
+	/**
+	 * @param args Args
+	 */
 	public static void main(final String[] args) {
 		SpringApplication.run(PricesH2Application.class, args);
 	}
