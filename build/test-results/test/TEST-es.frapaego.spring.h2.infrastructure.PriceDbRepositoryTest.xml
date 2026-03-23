@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="es.frapaego.spring.h2.infrastructure.PriceDbRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-03-23T12:52:01" hostname="KM-5CD3162DV7" time="0.016">
+  <properties/>
+  <testcase name="findByStartDateAndProductIdAndBrandId_returnsNull_whenRepositoryReturnsNull()" classname="es.frapaego.spring.h2.infrastructure.PriceDbRepositoryTest" time="0.005"/>
+  <testcase name="findByStartDateAndProductIdAndBrandId_returnsPriceDAO_whenRepositoryHasPrice()" classname="es.frapaego.spring.h2.infrastructure.PriceDbRepositoryTest" time="0.006"/>
+  <system-out><![CDATA[2026-03-23T13:52:01.206+01:00  INFO 10432 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [es.frapaego.spring.h2.infrastructure.PriceDbRepositoryTest]: PriceDbRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-23T13:52:01.208+01:00  INFO 10432 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration es.frapaego.spring.h2.PricesH2Application for test class es.frapaego.spring.h2.infrastructure.PriceDbRepositoryTest
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

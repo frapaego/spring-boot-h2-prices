@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="es.frapaego.spring.h2.PricesH2ApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-03-23T12:51:59" hostname="KM-5CD3162DV7" time="0.686">
+  <properties/>
+  <testcase name="contextLoads()" classname="es.frapaego.spring.h2.PricesH2ApplicationTests" time="0.686"/>
+  <system-out><![CDATA[13:51:50.695 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [es.frapaego.spring.h2.PricesH2ApplicationTests]: PricesH2ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:51:50.811 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration es.frapaego.spring.h2.PricesH2Application for test class es.frapaego.spring.h2.PricesH2ApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.0)
+
+2026-03-23T13:51:51.373+01:00  INFO 10432 --- [    Test worker] e.f.spring.h2.PricesH2ApplicationTests   : Starting PricesH2ApplicationTests using Java 21.0.3 with PID 10432 (started by fjpaez in C:\Users\fjpaez\Workspaces\workspace-go\spring-boot-h2-prices-main)
+2026-03-23T13:51:51.374+01:00  INFO 10432 --- [    Test worker] e.f.spring.h2.PricesH2ApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2026-03-23T13:51:52.524+01:00  INFO 10432 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-23T13:51:52.609+01:00  INFO 10432 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 2 JPA repository interfaces.
+2026-03-23T13:51:53.295+01:00  INFO 10432 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-23T13:51:53.393+01:00  INFO 10432 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
+2026-03-23T13:51:53.395+01:00  INFO 10432 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2026-03-23T13:51:53.629+01:00  INFO 10432 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2026-03-23T13:51:53.874+01:00  INFO 10432 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-23T13:51:53.910+01:00  INFO 10432 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-23T13:51:54.217+01:00  INFO 10432 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:canalcliente user=SA
+2026-03-23T13:51:54.219+01:00  INFO 10432 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-23T13:51:54.262+01:00  INFO 10432 --- [    Test worker] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.H2Dialect, version: 2.2.220
+2026-03-23T13:51:54.526+01:00  INFO 10432 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2026-03-23T13:51:55.302+01:00  INFO 10432 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-03-23T13:51:55.305+01:00  INFO 10432 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-23T13:51:55.844+01:00  INFO 10432 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-23T13:51:56.861+01:00  WARN 10432 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-23T13:51:56.993+01:00  WARN 10432 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 299c7cb1-b19e-47e4-a23d-3a8f129fee68
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-03-23T13:51:57.240+01:00  INFO 10432 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@10387d6d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7fb539df, org.springframework.security.web.context.SecurityContextHolderFilter@3e711e84, org.springframework.security.web.header.HeaderWriterFilter@2fbbdca, org.springframework.security.web.authentication.logout.LogoutFilter@67599bae, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@426fb1c3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68a06914, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c3d46d6, org.springframework.security.web.access.ExceptionTranslationFilter@5b115d71, org.springframework.security.web.access.intercept.AuthorizationFilter@7e822c11]
+2026-03-23T13:51:59.559+01:00  INFO 10432 --- [    Test worker] e.f.spring.h2.PricesH2ApplicationTests   : Started PricesH2ApplicationTests in 8.494 seconds (process running for 9.905)
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\fjpaez\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.4\3bf5ac1104554908cc623e40e58a00be37c35f36\byte-buddy-agent-1.14.4.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

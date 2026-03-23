@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - SpringDataBrandRepositoryTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>SpringDataBrandRepositoryTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/es.frapaego.spring.h2.infrastructure.outbound.db.repository.html">es.frapaego.spring.h2.infrastructure.outbound.db.repository</a> &gt; SpringDataBrandRepositoryTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.077s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">findByBrandId returns correct BrandDAO for valid id</td>
+<td class="success">findByBrandId_returnsCorrectBrandDAO()</td>
+<td class="success">0.062s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findByBrandId returns null for non-existing id</td>
+<td class="success">findByBrandId_returnsNull()</td>
+<td class="success">0.015s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2026-03-23T13:52:06.660+01:00  INFO 10432 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [es.frapaego.spring.h2.infrastructure.outbound.db.repository.SpringDataBrandRepositoryTest]: SpringDataBrandRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-23T13:52:06.681+01:00  INFO 10432 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration es.frapaego.spring.h2.PricesH2Application for test class es.frapaego.spring.h2.infrastructure.outbound.db.repository.SpringDataBrandRepositoryTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.0)
+
+2026-03-23T13:52:06.705+01:00  INFO 10432 --- [    Test worker] .h.i.o.d.r.SpringDataBrandRepositoryTest : Starting SpringDataBrandRepositoryTest using Java 21.0.3 with PID 10432 (started by fjpaez in C:\Users\fjpaez\Workspaces\workspace-go\spring-boot-h2-prices-main)
+2026-03-23T13:52:06.705+01:00  INFO 10432 --- [    Test worker] .h.i.o.d.r.SpringDataBrandRepositoryTest : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2026-03-23T13:52:06.805+01:00  INFO 10432 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-23T13:52:06.827+01:00  INFO 10432 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 2 JPA repository interfaces.
+2026-03-23T13:52:06.835+01:00  INFO 10432 --- [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2026-03-23T13:52:06.857+01:00  INFO 10432 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:d2ba6c95-b6bb-443f-95e4-8748ba08f515;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-03-23T13:52:06.889+01:00  INFO 10432 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-23T13:52:06.901+01:00  INFO 10432 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2026-03-23T13:52:06.902+01:00  INFO 10432 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-23T13:52:06.904+01:00  INFO 10432 --- [    Test worker] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.H2Dialect, version: 2.2.220
+2026-03-23T13:52:06.926+01:00  INFO 10432 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2026-03-23T13:52:06.965+01:00  INFO 10432 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-03-23T13:52:06.966+01:00  INFO 10432 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-23T13:52:07.060+01:00  INFO 10432 --- [    Test worker] .h.i.o.d.r.SpringDataBrandRepositoryTest : Started SpringDataBrandRepositoryTest in 0.376 seconds (process running for 17.406)
+2026-03-23T13:52:07.117+01:00 DEBUG 10432 --- [    Test worker] org.hibernate.SQL                        : select b1_0.brand_id,b1_0.name from brand b1_0 where b1_0.brand_id=?
+Hibernate: select b1_0.brand_id,b1_0.name from brand b1_0 where b1_0.brand_id=?
+2026-03-23T13:52:07.118+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [INTEGER] - [1]
+2026-03-23T13:52:07.141+01:00 DEBUG 10432 --- [    Test worker] org.hibernate.SQL                        : select b1_0.brand_id,b1_0.name from brand b1_0 where b1_0.brand_id=?
+Hibernate: select b1_0.brand_id,b1_0.name from brand b1_0 where b1_0.brand_id=?
+2026-03-23T13:52:07.141+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [INTEGER] - [999]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.9</a> at 23 mar 2026, 13:52:07</p>
+</div>
+</div>
+</body>
+</html>

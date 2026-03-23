@@ -1,1 +1,1 @@
-mvn clean install && mvn spring-boot:run
+gradle build && gradle bootRun

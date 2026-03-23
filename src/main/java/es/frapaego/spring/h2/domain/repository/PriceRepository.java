@@ -2,8 +2,8 @@ package es.frapaego.spring.h2.domain.repository;
 
 import java.time.LocalDateTime;
 
-import es.frapaego.spring.h2.infrastracture.repository.BrandDAO;
-import es.frapaego.spring.h2.infrastracture.repository.PriceDAO;
+import es.frapaego.spring.h2.domain.model.Brand;
+import es.frapaego.spring.h2.domain.model.Price;
 
 /**
  * PriceRepository
@@ -18,8 +18,8 @@ public interface PriceRepository {
 	 * @param startDate Start date
 	 * @param productId Product id
 	 * @param brandId Brand id
-	 * @return PriceDAO
+	 * @return Price
 	 */
-	PriceDAO findByStartDateAndProductIdAndBrandId(LocalDateTime startDate, Integer productId, BrandDAO brandId);
+	Price findByStartDateAndProductIdAndBrandId(LocalDateTime startDate, Integer productId, Brand brandId);
 
 }
