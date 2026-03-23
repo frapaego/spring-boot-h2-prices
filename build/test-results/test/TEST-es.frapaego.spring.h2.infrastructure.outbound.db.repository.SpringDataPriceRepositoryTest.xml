@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="es.frapaego.spring.h2.infrastructure.outbound.db.repository.SpringDataPriceRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-03-23T12:52:07" hostname="KM-5CD3162DV7" time="0.048">
+  <properties/>
+  <testcase name="findByStartDateAndProductIdAndBrandId returns correct PriceDAO for valid params" classname="es.frapaego.spring.h2.infrastructure.outbound.db.repository.SpringDataPriceRepositoryTest" time="0.031"/>
+  <testcase name="findByStartDateAndProductIdAndBrandId returns null for non-existing params" classname="es.frapaego.spring.h2.infrastructure.outbound.db.repository.SpringDataPriceRepositoryTest" time="0.016"/>
+  <system-out><![CDATA[2026-03-23T13:52:07.146+01:00  INFO 10432 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [es.frapaego.spring.h2.infrastructure.outbound.db.repository.SpringDataPriceRepositoryTest]: SpringDataPriceRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-23T13:52:07.149+01:00  INFO 10432 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration es.frapaego.spring.h2.PricesH2Application for test class es.frapaego.spring.h2.infrastructure.outbound.db.repository.SpringDataPriceRepositoryTest
+2026-03-23T13:52:07.161+01:00 DEBUG 10432 --- [    Test worker] org.hibernate.SQL                        : select b1_0.brand_id,b1_0.name from brand b1_0 where b1_0.brand_id=?
+Hibernate: select b1_0.brand_id,b1_0.name from brand b1_0 where b1_0.brand_id=?
+2026-03-23T13:52:07.161+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [INTEGER] - [1]
+2026-03-23T13:52:07.179+01:00 DEBUG 10432 --- [    Test worker] org.hibernate.SQL                        : select p1_0.price_list,p1_0.brand_id,p1_0.curr,p1_0.end_date,p1_0.price,p1_0.priority,p1_0.product_id,p1_0.start_date from price p1_0 where p1_0.brand_id=? and p1_0.product_id=? and ? between p1_0.start_date and p1_0.end_date and p1_0.priority=(select max(p2_0.priority) from price p2_0 where p1_0.brand_id=? and p2_0.product_id=? and ? between p2_0.start_date and p2_0.end_date)
+Hibernate: select p1_0.price_list,p1_0.brand_id,p1_0.curr,p1_0.end_date,p1_0.price,p1_0.priority,p1_0.product_id,p1_0.start_date from price p1_0 where p1_0.brand_id=? and p1_0.product_id=? and ? between p1_0.start_date and p1_0.end_date and p1_0.priority=(select max(p2_0.priority) from price p2_0 where p1_0.brand_id=? and p2_0.product_id=? and ? between p2_0.start_date and p2_0.end_date)
+2026-03-23T13:52:07.179+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [INTEGER] - [1]
+2026-03-23T13:52:07.180+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [2] as [INTEGER] - [35455]
+2026-03-23T13:52:07.180+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [3] as [TIMESTAMP] - [2020-06-14T10:00]
+2026-03-23T13:52:07.180+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [4] as [INTEGER] - [1]
+2026-03-23T13:52:07.180+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [5] as [INTEGER] - [35455]
+2026-03-23T13:52:07.180+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [6] as [TIMESTAMP] - [2020-06-14T10:00]
+2026-03-23T13:52:07.191+01:00 DEBUG 10432 --- [    Test worker] org.hibernate.SQL                        : select b1_0.brand_id,b1_0.name from brand b1_0 where b1_0.brand_id=?
+Hibernate: select b1_0.brand_id,b1_0.name from brand b1_0 where b1_0.brand_id=?
+2026-03-23T13:52:07.191+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [INTEGER] - [1]
+2026-03-23T13:52:07.194+01:00 DEBUG 10432 --- [    Test worker] org.hibernate.SQL                        : select p1_0.price_list,p1_0.brand_id,p1_0.curr,p1_0.end_date,p1_0.price,p1_0.priority,p1_0.product_id,p1_0.start_date from price p1_0 where p1_0.brand_id=? and p1_0.product_id=? and ? between p1_0.start_date and p1_0.end_date and p1_0.priority=(select max(p2_0.priority) from price p2_0 where p1_0.brand_id=? and p2_0.product_id=? and ? between p2_0.start_date and p2_0.end_date)
+Hibernate: select p1_0.price_list,p1_0.brand_id,p1_0.curr,p1_0.end_date,p1_0.price,p1_0.priority,p1_0.product_id,p1_0.start_date from price p1_0 where p1_0.brand_id=? and p1_0.product_id=? and ? between p1_0.start_date and p1_0.end_date and p1_0.priority=(select max(p2_0.priority) from price p2_0 where p1_0.brand_id=? and p2_0.product_id=? and ? between p2_0.start_date and p2_0.end_date)
+2026-03-23T13:52:07.195+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [INTEGER] - [1]
+2026-03-23T13:52:07.196+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [2] as [INTEGER] - [99999]
+2026-03-23T13:52:07.196+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [3] as [TIMESTAMP] - [2030-01-01T00:00]
+2026-03-23T13:52:07.196+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [4] as [INTEGER] - [1]
+2026-03-23T13:52:07.196+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [5] as [INTEGER] - [99999]
+2026-03-23T13:52:07.196+01:00 TRACE 10432 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [6] as [TIMESTAMP] - [2030-01-01T00:00]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

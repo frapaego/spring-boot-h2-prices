@@ -1,6 +1,6 @@
 package es.frapaego.spring.h2.domain.repository;
 
-import es.frapaego.spring.h2.infrastracture.repository.BrandDAO;
+import es.frapaego.spring.h2.domain.model.Brand;
 
 /**
  * BrandRepository
@@ -13,8 +13,8 @@ public interface BrandRepository {
 	 * Obtiene la marca indicada
 	 * 
 	 * @param brandId Brand Id
-	 * @return BrandDAO
+	 * @return Brand
 	 */
-	BrandDAO findByBrandId(Integer brandId);
+	Brand findByBrandId(Integer brandId);
 
 }

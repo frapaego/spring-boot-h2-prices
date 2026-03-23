@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="es.frapaego.spring.h2.infrastructure.inbound.rest.impl.PriceControllerImplTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-23T12:52:04" hostname="KM-5CD3162DV7" time="0.071">
+  <properties/>
+  <testcase name="obtenerPrecio_returnsOk_whenServiceReturnsPrice()" classname="es.frapaego.spring.h2.infrastructure.inbound.rest.impl.PriceControllerImplTest" time="0.035"/>
+  <testcase name="obtenerPrecio_returnsNotFound_whenServiceReturnsNull()" classname="es.frapaego.spring.h2.infrastructure.inbound.rest.impl.PriceControllerImplTest" time="0.012"/>
+  <testcase name="obtenerPrecio_returnsInternalServerError_whenServiceThrows()" classname="es.frapaego.spring.h2.infrastructure.inbound.rest.impl.PriceControllerImplTest" time="0.015"/>
+  <system-out><![CDATA[2026-03-23T13:52:04.655+01:00  INFO 10432 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [es.frapaego.spring.h2.infrastructure.inbound.rest.impl.PriceControllerImplTest]: PriceControllerImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-23T13:52:04.688+01:00  INFO 10432 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration es.frapaego.spring.h2.PricesH2Application for test class es.frapaego.spring.h2.infrastructure.inbound.rest.impl.PriceControllerImplTest
+2026-03-23T13:52:04.749+01:00  INFO 10432 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-03-23T13:52:04.749+01:00  INFO 10432 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-03-23T13:52:04.750+01:00  INFO 10432 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-03-23T13:52:04.771+01:00  INFO 10432 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-03-23T13:52:04.772+01:00  INFO 10432 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-03-23T13:52:04.772+01:00  INFO 10432 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-03-23T13:52:04.783+01:00  INFO 10432 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-03-23T13:52:04.784+01:00  INFO 10432 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-03-23T13:52:04.784+01:00  INFO 10432 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
