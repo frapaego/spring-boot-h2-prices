@@ -5,12 +5,16 @@ import static org.mockito.Mockito.when;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.core.convert.support.GenericConversionService;
+import org.springframework.data.domain.Pageable;
 
 import es.frapaego.spring.h2.domain.model.Brand;
 import es.frapaego.spring.h2.domain.model.Price;
@@ -18,14 +22,14 @@ import es.frapaego.spring.h2.infrastructure.outbound.db.model.BrandDAO;
 import es.frapaego.spring.h2.infrastructure.outbound.db.model.PriceDAO;
 import es.frapaego.spring.h2.infrastructure.outbound.db.repository.SpringDataPriceRepository;
 
-@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class PriceDbRepositoryTest {
 
     @Mock
     private SpringDataPriceRepository springDataPriceRepository;
 
     @InjectMocks
-    private PriceRepositoryImpl priceDbRepository;
+    private es.frapaego.spring.h2.infrastructure.outbound.db.adapter.DbPriceRepositoryAdapter priceDbRepository;
 
     @Mock
     private GenericConversionService genericConversionService;
@@ -39,7 +43,7 @@ class PriceDbRepositoryTest {
         final Price expected = Price.builder().priceList(1).brand(brand).startDate(now.minusDays(1)).endDate(now.plusDays(1)).productId(35455).priority(0).price(35.5).curr("EUR").build();
 
         when(genericConversionService.convert(eq(brand), eq(BrandDAO.class))).thenReturn(brandDAO);
-        when(springDataPriceRepository.findByStartDateAndProductIdAndBrandId(eq(now), eq(35455), eq(brandDAO))).thenReturn(p);
+        when(springDataPriceRepository.findByStartDateAndProductIdAndBrandIdOrderByPriorityDesc(eq(now), eq(35455), eq(brandDAO), ArgumentMatchers.any(Pageable.class))).thenReturn(Collections.singletonList(p));
         when(genericConversionService.convert(eq(p), eq(Price.class))).thenReturn(expected);
         
 
@@ -55,10 +59,10 @@ class PriceDbRepositoryTest {
         final Brand brand = Brand.builder().brandId(1).name("Brand").build();
 
         when(genericConversionService.convert(eq(brand), eq(BrandDAO.class))).thenReturn(brandDAO);
-        when(springDataPriceRepository.findByStartDateAndProductIdAndBrandId(eq(now), eq(35455), eq(brandDAO))).thenReturn(null);
+        when(springDataPriceRepository.findByStartDateAndProductIdAndBrandIdOrderByPriorityDesc(eq(now), eq(35455), eq(brandDAO), ArgumentMatchers.any(Pageable.class))).thenReturn(Collections.emptyList());
 
-        final Price result = priceDbRepository.findByStartDateAndProductIdAndBrandId(now, 35455, brand);
-        assertNull(result);
-    }
+         final Price result = priceDbRepository.findByStartDateAndProductIdAndBrandId(now, 35455, brand);
+         assertNull(result);
+     }
 
-}
+ }

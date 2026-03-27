@@ -5,23 +5,24 @@ import static org.mockito.Mockito.when;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.core.convert.support.GenericConversionService;
 
 import es.frapaego.spring.h2.domain.model.Brand;
 import es.frapaego.spring.h2.infrastructure.outbound.db.model.BrandDAO;
 import es.frapaego.spring.h2.infrastructure.outbound.db.repository.SpringDataBrandRepository;
 
-@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class BrandDbRepositoryTest {
 
     @Mock
     private SpringDataBrandRepository springDataBrandRepository;
 
     @InjectMocks
-    private BrandRepositoryImpl brandDbRepository;
+    private es.frapaego.spring.h2.infrastructure.outbound.db.adapter.DbBrandRepositoryAdapter brandDbRepository;
 
     @Mock
     private GenericConversionService genericConversionService;

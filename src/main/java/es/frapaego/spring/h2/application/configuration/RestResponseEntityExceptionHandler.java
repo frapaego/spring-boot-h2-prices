@@ -16,4 +16,11 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
 		final String bodyOfResponse = "This should be application specific";
 		return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.CONFLICT, request);
 	}
+
+	@ExceptionHandler(value = { Exception.class })
+	protected ResponseEntity<Object> handleGenericException(final Exception ex, final WebRequest request) {
+		// Fallback handler mapping unexpected exceptions to 500 Internal Server Error
+		final String bodyOfResponse = "Internal server error";
+		return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
+	}
 }

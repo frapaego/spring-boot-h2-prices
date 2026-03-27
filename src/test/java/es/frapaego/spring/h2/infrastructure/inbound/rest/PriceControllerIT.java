@@ -25,7 +25,7 @@ public class PriceControllerIT {
         String productId = "35455";
         String startDate = "14-06-2020 10:00:00"; // Formato correcto dd-MM-yyyy HH:mm:ss
         // Act
-        MvcResult result = mockMvc.perform(get("/api/obtenerPrecio/" + brandId + "/" + productId)
+        MvcResult result = mockMvc.perform(get("/api/price/" + brandId + "/" + productId)
                 .param("startDate", startDate))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -38,7 +38,7 @@ public class PriceControllerIT {
 
     @Test
     void obtenerPrecio_debeRetornar404_siNoExistePrecio() throws Exception {
-        mockMvc.perform(get("/api/obtenerPrecio/1/99999")
+        mockMvc.perform(get("/api/price/1/99999")
                 .param("startDate", "14-06-2020 10:00:00")) // Formato correcto
                 .andExpect(status().isNotFound());
     }
@@ -48,7 +48,7 @@ public class PriceControllerIT {
         String brandId = "1";
         String productId = "35455";
         String startDate = "14-06-2020 00:00:00";
-        MvcResult result = mockMvc.perform(get("/api/obtenerPrecio/" + brandId + "/" + productId)
+        MvcResult result = mockMvc.perform(get("/api/price/" + brandId + "/" + productId)
                 .param("startDate", startDate))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -61,7 +61,7 @@ public class PriceControllerIT {
         String brandId = "1";
         String productId = "35455";
         String startDate = "31-12-2020 23:59:59";
-        MvcResult result = mockMvc.perform(get("/api/obtenerPrecio/" + brandId + "/" + productId)
+        MvcResult result = mockMvc.perform(get("/api/price/" + brandId + "/" + productId)
                 .param("startDate", startDate))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -74,7 +74,7 @@ public class PriceControllerIT {
         String brandId = "1";
         String productId = "35455";
         String startDate = "14-06-2020 16:00:00";
-        MvcResult result = mockMvc.perform(get("/api/obtenerPrecio/" + brandId + "/" + productId)
+        MvcResult result = mockMvc.perform(get("/api/price/" + brandId + "/" + productId)
                 .param("startDate", startDate))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -84,7 +84,7 @@ public class PriceControllerIT {
 
     @Test
     void obtenerPrecio_debeRetornar400_paraFechaInvalida() throws Exception {
-        mockMvc.perform(get("/api/obtenerPrecio/1/35455")
+        mockMvc.perform(get("/api/price/1/35455")
                 .param("startDate", "2020/06/14"))
                 .andExpect(status().isBadRequest());
     }

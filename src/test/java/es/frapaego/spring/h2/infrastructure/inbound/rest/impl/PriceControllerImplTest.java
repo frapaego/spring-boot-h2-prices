@@ -11,18 +11,19 @@ import java.time.format.DateTimeFormatter;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import es.frapaego.spring.h2.application.find.PriceService;
 import es.frapaego.spring.h2.domain.model.Price;
+import es.frapaego.spring.h2.application.configuration.RestResponseEntityExceptionHandler;
 
-@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class PriceControllerImplTest {
 
     private MockMvc mockMvc;
@@ -35,8 +36,10 @@ class PriceControllerImplTest {
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(this);
-        this.mockMvc = MockMvcBuilders.standaloneSetup(this.priceController).build();
+        // register global exception handler so thrown exceptions are mapped to HTTP responses during tests
+        this.mockMvc = MockMvcBuilders.standaloneSetup(this.priceController)
+                .setControllerAdvice(new RestResponseEntityExceptionHandler())
+                .build();
     }
 
     @Test
@@ -48,7 +51,7 @@ class PriceControllerImplTest {
 
         final String formatted = now.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
 
-        this.mockMvc.perform(get("/api/obtenerPrecio/1/35455").param("startDate", formatted).accept(MediaType.APPLICATION_JSON))
+        this.mockMvc.perform(get("/api/price/1/35455").param("startDate", formatted).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
@@ -60,7 +63,7 @@ class PriceControllerImplTest {
 
         final String formatted = now.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
 
-        this.mockMvc.perform(get("/api/obtenerPrecio/1/35455").param("startDate", formatted).accept(MediaType.APPLICATION_JSON))
+        this.mockMvc.perform(get("/api/price/1/35455").param("startDate", formatted).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
 
@@ -71,7 +74,7 @@ class PriceControllerImplTest {
 
         final String formatted = now.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
 
-        this.mockMvc.perform(get("/api/obtenerPrecio/1/35455").param("startDate", formatted).accept(MediaType.APPLICATION_JSON))
+        this.mockMvc.perform(get("/api/price/1/35455").param("startDate", formatted).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isInternalServerError());
     }
 

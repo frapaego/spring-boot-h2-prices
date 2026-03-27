@@ -1,9 +1,11 @@
 package es.frapaego.spring.h2.infrastructure.outbound.db.repository;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.domain.Pageable;
 
 import es.frapaego.spring.h2.infrastructure.outbound.db.model.BrandDAO;
 import es.frapaego.spring.h2.infrastructure.outbound.db.model.PriceDAO;
@@ -23,8 +25,7 @@ public interface SpringDataPriceRepository extends JpaRepository<PriceDAO, Integ
 	 * @param brandId Brand id
 	 * @return PriceDAO
 	 */
-	@Query("select a from PriceDAO a where a.brand = :brandId AND a.productId = :productId AND :startDate BETWEEN a.startDate AND a.endDate AND a.priority = ("
-			+ "select max(b.priority) from PriceDAO b where a.brand = :brandId AND b.productId = :productId AND :startDate BETWEEN b.startDate AND b.endDate)")
-	PriceDAO findByStartDateAndProductIdAndBrandId(LocalDateTime startDate, Integer productId, BrandDAO brandId);
+	@Query("select a from PriceDAO a where a.brand = :brandId AND a.productId = :productId AND :startDate BETWEEN a.startDate AND a.endDate ORDER BY a.priority DESC")
+	List<PriceDAO> findByStartDateAndProductIdAndBrandIdOrderByPriorityDesc(LocalDateTime startDate, Integer productId, BrandDAO brandId, Pageable pageable);
 
 }

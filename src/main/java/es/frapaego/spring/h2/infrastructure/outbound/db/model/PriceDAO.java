@@ -3,6 +3,7 @@ package es.frapaego.spring.h2.infrastructure.outbound.db.model;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -20,6 +21,7 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "price")
+@SuppressFBWarnings(value = {"EI_EXPOSE_REP", "EI_EXPOSE_REP2"}, justification = "JPA entity; fields intentionally mutable and converted defensively at boundaries")
 public class PriceDAO {
 
 	/**
