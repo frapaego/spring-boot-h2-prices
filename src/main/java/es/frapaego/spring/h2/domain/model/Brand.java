@@ -2,24 +2,16 @@ package es.frapaego.spring.h2.domain.model;
 
 import java.io.Serializable;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.Value;
 
 /**
  * Brand
  * @author frapaego@gmail.com
  *
  */
-@Data
+@Value
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode
-@ToString
 public class Brand implements Serializable {
 
 	/**
@@ -30,11 +22,11 @@ public class Brand implements Serializable {
 	/**
 	 * brandId
 	 */
-	private Integer brandId;
+	Integer brandId;
 
 	/**
 	 * name
 	 */
-	private String name;
+	String name;
 
 }

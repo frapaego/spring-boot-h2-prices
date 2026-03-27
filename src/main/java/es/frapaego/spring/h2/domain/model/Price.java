@@ -3,24 +3,16 @@ package es.frapaego.spring.h2.domain.model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.Value;
 
 /**
  * Price
  * @author frapaego@gmail.com
  *
  */
-@Data
+@Value
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode
-@ToString
 public class Price implements Serializable {
 
 	/**
@@ -31,41 +23,41 @@ public class Price implements Serializable {
 	/**
 	 * priceList
 	 */
-	private Integer priceList;
+	Integer priceList;
 
 	/**
 	 * brandId
 	 */
-	private Brand brand;
+	Brand brand;
 
 	/**
 	 * startDate
 	 */
-	private LocalDateTime startDate;
+	LocalDateTime startDate;
 
 	/**
 	 * endDate
 	 */
-	private LocalDateTime endDate;
+	LocalDateTime endDate;
 
 	/**
 	 * productId
 	 */
-	private Integer productId;
+	Integer productId;
 
 	/**
 	 * priority
 	 */
-	private Integer priority;
+	Integer priority;
 
 	/**
 	 * price
 	 */
-	private Double price;
+	Double price;
 
 	/**
 	 * curr
 	 */
-	private String curr;
+	String curr;
 
 }

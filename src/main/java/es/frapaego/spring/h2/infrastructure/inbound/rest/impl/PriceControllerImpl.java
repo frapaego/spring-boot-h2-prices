@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -35,16 +34,12 @@ public class PriceControllerImpl implements PriceController {
 	/**
 	 * @see es.frapaego.spring.h2.infrastructure.inbound.rest.PriceController#obtenerPrecio(java.lang.Integer, java.lang.Integer, java.time.LocalDateTime)
 	 */
-	@GetMapping(value = "/obtenerPrecio/{brandId}/{productId}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/price/{brandId}/{productId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Price> obtenerPrecio(
 			@PathVariable("brandId") final Integer brandId,
 			@PathVariable("productId") final Integer productId,
 			@RequestParam("startDate") @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm:ss") final LocalDateTime startDate) {
-		try {
-			return Optional.ofNullable(this.priceService.findByStartDateAndProductIdAndBrandId(startDate, productId, brandId))
-					.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
-		} catch (final Exception e) {
-			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-		}
+		 return Optional.ofNullable(this.priceService.findByStartDateAndProductIdAndBrandId(startDate, productId, brandId))
+				 .map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
 	}
 }

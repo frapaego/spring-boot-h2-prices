@@ -2,6 +2,7 @@ package es.frapaego.spring.h2.infrastructure.outbound.db.model;
 
 import java.util.Objects;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,6 +17,7 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "brand")
+@SuppressFBWarnings(value = {"EI_EXPOSE_REP", "EI_EXPOSE_REP2"}, justification = "JPA entity; fields intentionally mutable and converted defensively at boundaries")
 public class BrandDAO {
 	/**
 	 * brandId

@@ -5,12 +5,11 @@ import static org.mockito.Mockito.when;
 
 import java.time.LocalDateTime;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.core.convert.support.GenericConversionService;
 
 import es.frapaego.spring.h2.domain.model.Brand;
@@ -21,7 +20,7 @@ import es.frapaego.spring.h2.infrastructure.outbound.db.model.BrandDAO;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class DomainPriceServiceTest {
 
     @Mock
@@ -57,11 +56,8 @@ class DomainPriceServiceTest {
     void findByStartDateAndProductIdAndBrandId_returnsNull_whenRepositoryReturnsNull() {
         final LocalDateTime now = LocalDateTime.now();
         final Brand brand = Brand.builder().brandId(1).name("BrandName").build();
-        final BrandDAO brandDAO = new BrandDAO(1, "BrandName");
         
         when(brandRepository.findByBrandId(eq(1))).thenReturn(brand);
-
-        when(genericConversionService.convert(eq(brand), eq(BrandDAO.class))).thenReturn(brandDAO);
         when(priceRepository.findByStartDateAndProductIdAndBrandId(eq(now), eq(35455), eq(brand))).thenReturn(null);
 
         final Price result = domainPriceService.findByStartDateAndProductIdAndBrandId(now, 35455, 1);
